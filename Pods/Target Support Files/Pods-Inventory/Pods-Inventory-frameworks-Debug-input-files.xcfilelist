@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-Inventory/Pods-Inventory-frameworks.sh
+${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/PBRevealViewController/PBRevealViewController.framework
+${BUILT_PRODUCTS_DIR}/UICircularProgressRing/UICircularProgressRing.framework
