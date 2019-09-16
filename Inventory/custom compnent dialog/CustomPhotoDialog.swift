@@ -13,11 +13,11 @@ import AVFoundation
 let ANIMATION_DURATION  = 0.25
 
 
-public class CustomPhotoDialog:CustomDialog,UIImagePickerControllerDelegate,UINavigationControllerDelegate
+public class CustomPhotoDialog:UIView,UIImagePickerControllerDelegate,UINavigationControllerDelegate
 {
     @IBOutlet weak var alertView: UIView!
     var onImageSelected : ((UIImage) -> Void)? = nil
-    weak var parent: UIViewController?
+    var parent:UIViewController?
     let picker = UIImagePickerController()
     @IBOutlet weak var lblTitle: UILabel?
     @IBOutlet weak var btnRight: UIButton!
@@ -31,11 +31,11 @@ public class CustomPhotoDialog:CustomDialog,UIImagePickerControllerDelegate,UINa
         
         self.addGestureRecognizer(tap)
         
-       // lblTitle?.font = FontHelper.font(size: FontSize.large, type: FontType.Regular)
-      //  btnRight.titleLabel?.font = FontHelper.font(size: FontSize.regular, type: FontType.Regular)
-      //  btnLeft.titleLabel?.font = FontHelper.font(size: FontSize.regular, type: FontType.Regular)
+     //   lblTitle?.font = FontHelper.font(size: FontSize.large, type: FontType.Regular)
+        //;   btnRight.titleLabel?.font = FontHelper.font(size: FontSize.regular, type: FontType.Regular)
+//btnLeft.titleLabel?.font = FontHelper.font(size: FontSize.regular, type: FontType.Regular)
         
-      //  self.backgroundColor = UIColor.themeOverlayColor
+        self.backgroundColor = UIColor.themeOverlayColor
         self.alertView.backgroundColor = UIColor.white
        
         
@@ -49,7 +49,7 @@ public class CustomPhotoDialog:CustomDialog,UIImagePickerControllerDelegate,UINa
         
         view.btnLeft.setTitle("Gallery"/*.localizedCapitalized*/, for: UIControl.State.normal)
         view.btnRight.setTitle("Camera"/*.localizedCapitalized*/, for: UIControl.State.normal)
-        view.lblTitle?.text = withTitle/*.localized*/;
+        view.lblTitle?.text = withTitle/*.localized;*/
         view.parent = andParent;
          view.alertView.setRound(withBorderColor: .clear, andCornerRadious: 3.0, borderWidth: 1.0)
         
@@ -100,14 +100,12 @@ public class CustomPhotoDialog:CustomDialog,UIImagePickerControllerDelegate,UINa
             imageSelected = nil
         }
         
-        self.parent?.dismiss(animated: true, completion: nil)
-        self.removeFromSuperview()
+        parent?.dismiss(animated: true, completion: nil)
     }
     
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
     {
-        self.parent?.dismiss(animated: true, completion: nil)
-        self.removeFromSuperview()
+        parent?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func photoFromLibrary(_ sender: UIBarButtonItem?)
@@ -186,11 +184,11 @@ public class CustomPhotoDialog:CustomDialog,UIImagePickerControllerDelegate,UINa
         
         let dialogForPermission = CustomAlertDialog.showCustomAlertDialog(title: "IMPORTANT"/*.localized*/, message: "Camera access required for capturing photos!"/*.localized*/, titleLeftButton: ""/*.localized*/, titleRightButton: "Ok"/*.localized*/)
             dialogForPermission.onClickLeftButton =
-                { [unowned dialogForPermission] in
+                {
                     dialogForPermission.removeFromSuperview();
             }
             dialogForPermission.onClickRightButton =
-                { [unowned dialogForPermission] in
+                {
                     dialogForPermission.removeFromSuperview();
                    
                 }

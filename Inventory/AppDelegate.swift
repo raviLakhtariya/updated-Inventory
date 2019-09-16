@@ -11,6 +11,18 @@ import UserNotifications
 import UserNotificationsUI
 import Photos
 
+
+extension UIView {
+    public func removeFromSuperviewAndNCObserver() {
+        for subvw in self.subviews {
+            subvw.removeFromSuperviewAndNCObserver()
+        }
+        
+        NotificationCenter.default.removeObserver(self)
+        self.removeFromSuperview()
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

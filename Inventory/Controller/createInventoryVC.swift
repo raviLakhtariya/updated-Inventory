@@ -8,7 +8,7 @@
 
 import UIKit
 
-class createInventoryVC: UIViewController,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class createInventoryVC: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var dateBtn: UIButton!
     
@@ -23,9 +23,9 @@ class createInventoryVC: UIViewController,UITextFieldDelegate,UIImagePickerContr
     @IBOutlet weak var lblproductTotal: UILabel!
     var strToDate:String = ""
     var dialogForImage:CustomPhotoDialog?;
-    var isPicAdded:Bool = false
+    var isPicAdded:Bool!
     var strDateOfEarning:String = "";
-    
+    var imgProduct : UIImage!
     @IBOutlet weak var cancelBtn: UIButton!
     var isEdit : Bool = false
     var productData : ProductInfo!
@@ -35,6 +35,7 @@ class createInventoryVC: UIViewController,UITextFieldDelegate,UIImagePickerContr
     var isDescription : Bool!
     var isProductQuantity : Bool!
     var isProductRate : Bool!
+    var imgads : UIImage!
     @IBOutlet weak var yourTotalBtn: UIButton!
     
     override func viewDidLoad() {
@@ -120,7 +121,13 @@ class createInventoryVC: UIViewController,UITextFieldDelegate,UIImagePickerContr
                 self.cancelBtn.isHidden = true
             }
         }else{
-            imgView.image = UIImage.init(named: "asset-placeholder")
+            if isPicAdded == false {
+                imgView.image = UIImage.init(named: "asset-placeholder")
+
+            }
+            else{
+                
+            }
             self.cancelBtn.isHidden = true
             lblproductTotal.text = "0.0"
             imgView.setRound()
@@ -175,7 +182,19 @@ class createInventoryVC: UIViewController,UITextFieldDelegate,UIImagePickerContr
         _ = self.navigationController?.popViewController(animated: true)
     }
     @IBAction func onClickBtnChoosePicture(_ sender: Any) {
-        openImageDialog()
+        let addImageVcObj : AddImgVC = self.storyboard?.instantiateViewController(withIdentifier: "addimgvc") as! AddImgVC
+        if imgView.image == UIImage.init(named: "asset-placeholder") {
+            addImageVcObj.imageadded = imgView.image
+            addImageVcObj.isPickAdded = false
+
+        }else{
+            addImageVcObj.imageview.image = imgView.image
+            addImageVcObj.isPickAdded = true
+
+        }
+        
+        self.navigationController?.pushViewController(addImageVcObj, animated: true)
+        //  openImageDialog()
     }
     @IBAction func onClickBtnCancelImg(_ sender: Any) {
         imgView.image = UIImage.init(named: "asset-placeholder")
@@ -325,17 +344,31 @@ class createInventoryVC: UIViewController,UITextFieldDelegate,UIImagePickerContr
         
     }
     func openImageDialog(){
-        self.view.endEditing(true)
-        self.dialogForImage = CustomPhotoDialog.showPhotoDialog("Select Image"/*.localized*/, andParent: self)
-        self.dialogForImage?.onImageSelected = { [dialogForImage = self.dialogForImage]
+        dialogForImage = CustomPhotoDialog.showPhotoDialog("Select image"/*.localized*/, andParent: self)
+        dialogForImage?.onImageSelected = { [unowned self, weak dialogForImage = self.dialogForImage]
             (image:UIImage) in
             self.imgView.image = image
             self.isPicAdded = true
-            self.cancelBtn.isHidden = false
-            dialogForImage?.removeFromSuperview()
+            dialogForImage?.removeFromSuperviewAndNCObserver()
+            dialogForImage = nil
         }
     }
-    
+    @IBAction func saveNames(segue: UIStoryboardSegue) {
+        let addimagevco:AddImgVC = segue.source as! AddImgVC
+        
+        if addimagevco.imageview.image == UIImage.init(named: "asset-placeholder") {
+            imgView.image = addimagevco.imageadded!
+            isPicAdded = addimagevco.isPickAdded!
+            
+        }else{
+            imgads = addimagevco.imageadded!
+            imgView.image = imgads!
+            isPicAdded = addimagevco.isPickAdded!
+            print(isPicAdded)
+        }
+        
+        
+    }
 /*    func createnotification(){
         let notification = UILocalNotification()
         notification.fireDate = NSDate(timeIntervalSinceNow: 5) as Date

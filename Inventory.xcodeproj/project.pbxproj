@@ -15,10 +15,8 @@
 		B807897522D3659400AD9A42 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807896C22D3659000AD9A42 /* Utility.swift */; };
 		B807897622D3659400AD9A42 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807896D22D3659100AD9A42 /* UIViewExtension.swift */; };
 		B807897722D3659400AD9A42 /* CustomDatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807896E22D3659100AD9A42 /* CustomDatePickerDialog.swift */; };
-		B807897822D3659400AD9A42 /* CustomPhotoDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807896F22D3659200AD9A42 /* CustomPhotoDialog.swift */; };
 		B807897922D3659400AD9A42 /* CustomAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807897022D3659200AD9A42 /* CustomAlertDialog.swift */; };
 		B807897A22D3659400AD9A42 /* ExtensionString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807897122D3659300AD9A42 /* ExtensionString.swift */; };
-		B807897B22D3659400AD9A42 /* dialogForChoosePicture.xib in Resources */ = {isa = PBXBuildFile; fileRef = B807897222D3659400AD9A42 /* dialogForChoosePicture.xib */; };
 		B807897D22D365F300AD9A42 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807897C22D365F200AD9A42 /* BaseVC.swift */; };
 		B807897F22D3661500AD9A42 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807897E22D3661500AD9A42 /* Constants.swift */; };
 		B807898122D3670800AD9A42 /* myAppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807898022D3670800AD9A42 /* myAppTheme.swift */; };
@@ -63,6 +61,9 @@
 		B89CCB1122EB20EF00F94BDB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89CCB1022EB20EF00F94BDB /* Reachability.swift */; };
 		B8A63A3A22E9D90D007EC266 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A63A3922E9D90D007EC266 /* SearchVC.swift */; };
 		B8A63A3C22E9D968007EC266 /* searchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A63A3B22E9D968007EC266 /* searchCell.swift */; };
+		B8AC973E232F577F00578C6E /* CustomPhotoDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC973C232F577E00578C6E /* CustomPhotoDialog.swift */; };
+		B8AC973F232F577F00578C6E /* dialogForChoosePicture.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AC973D232F577F00578C6E /* dialogForChoosePicture.xib */; };
+		B8AC9741232F73A600578C6E /* AddImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC9740232F73A600578C6E /* AddImgVC.swift */; };
 		B8B485F722D59E1500088D9C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B485F622D59E1500088D9C /* DateExtension.swift */; };
 		B8C8942222EAC38E00BF0DD4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8942122EAC38E00BF0DD4 /* MenuVC.swift */; };
 		B8C8942422EACD9400BF0DD4 /* CustomTotalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8942322EACD9400BF0DD4 /* CustomTotalDialog.swift */; };
@@ -83,10 +84,8 @@
 		B807896C22D3659000AD9A42 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		B807896D22D3659100AD9A42 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		B807896E22D3659100AD9A42 /* CustomDatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDatePickerDialog.swift; sourceTree = "<group>"; };
-		B807896F22D3659200AD9A42 /* CustomPhotoDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoDialog.swift; sourceTree = "<group>"; };
 		B807897022D3659200AD9A42 /* CustomAlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertDialog.swift; sourceTree = "<group>"; };
 		B807897122D3659300AD9A42 /* ExtensionString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionString.swift; sourceTree = "<group>"; };
-		B807897222D3659400AD9A42 /* dialogForChoosePicture.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dialogForChoosePicture.xib; sourceTree = "<group>"; };
 		B807897C22D365F200AD9A42 /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		B807897E22D3661500AD9A42 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B807898022D3670800AD9A42 /* myAppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myAppTheme.swift; sourceTree = "<group>"; };
@@ -141,6 +140,9 @@
 		B8A63A3822E9D7C0007EC266 /* Inventory.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inventory.db; sourceTree = "<group>"; };
 		B8A63A3922E9D90D007EC266 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		B8A63A3B22E9D968007EC266 /* searchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchCell.swift; sourceTree = "<group>"; };
+		B8AC973C232F577E00578C6E /* CustomPhotoDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoDialog.swift; sourceTree = "<group>"; };
+		B8AC973D232F577F00578C6E /* dialogForChoosePicture.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dialogForChoosePicture.xib; sourceTree = "<group>"; };
+		B8AC9740232F73A600578C6E /* AddImgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImgVC.swift; sourceTree = "<group>"; };
 		B8B485F622D59E1500088D9C /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B8C8942122EAC38E00BF0DD4 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		B8C8942322EACD9400BF0DD4 /* CustomTotalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTotalDialog.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				B82C6F5922D35A7300F78963 /* outverdVC.swift */,
 				B82C6F5B22D35A8900F78963 /* TransactionVC.swift */,
 				B82C6F5D22D35ADA00F78963 /* InventorVC.swift */,
+				B8AC9740232F73A600578C6E /* AddImgVC.swift */,
 				B82C6F5F22D35B3F00F78963 /* InOutVC.swift */,
 				B8C8942722EAEDAF00BF0DD4 /* PreviewVC.swift */,
 				B8A63A3922E9D90D007EC266 /* SearchVC.swift */,
@@ -309,7 +312,6 @@
 				B807896822D3655500AD9A42 /* ACFloatingTextfield.swift */,
 				B807897022D3659200AD9A42 /* CustomAlertDialog.swift */,
 				B807896E22D3659100AD9A42 /* CustomDatePickerDialog.swift */,
-				B807896F22D3659200AD9A42 /* CustomPhotoDialog.swift */,
 				B8C8942322EACD9400BF0DD4 /* CustomTotalDialog.swift */,
 				B851242F22EEB253006B78FD /* CustomDriverDetailCell.swift */,
 				B851242E22EEB253006B78FD /* CustomFavouriteDriverDialog.swift */,
@@ -317,8 +319,9 @@
 				B851242D22EEB253006B78FD /* CustomDriverDetailCell.xib */,
 				B8C8942522EACDAA00BF0DD4 /* dialogForTotal.xib */,
 				B807896B22D3659000AD9A42 /* dialogForAlert.xib */,
-				B807897222D3659400AD9A42 /* dialogForChoosePicture.xib */,
 				B807896A22D3658F00AD9A42 /* dialogForDatePicker.xib */,
+				B8AC973C232F577E00578C6E /* CustomPhotoDialog.swift */,
+				B8AC973D232F577F00578C6E /* dialogForChoosePicture.xib */,
 			);
 			path = "custom compnent dialog";
 			sourceTree = "<group>";
@@ -397,7 +400,7 @@
 				B84257E222D2F2B200DDB494 /* LaunchScreen.storyboard in Resources */,
 				B84257DF22D2F2B200DDB494 /* Assets.xcassets in Resources */,
 				B84257DD22D2F2B000DDB494 /* Main.storyboard in Resources */,
-				B807897B22D3659400AD9A42 /* dialogForChoosePicture.xib in Resources */,
+				B8AC973F232F577F00578C6E /* dialogForChoosePicture.xib in Resources */,
 				B807898922D371ED00AD9A42 /* font in Resources */,
 				B851243422EEB254006B78FD /* dialogForFavouriteDriver.xib in Resources */,
 				B807897322D3659400AD9A42 /* dialogForDatePicker.xib in Resources */,
@@ -467,6 +470,7 @@
 				B807898322D3677500AD9A42 /* PreferenceHelper.swift in Sources */,
 				B82C6F5C22D35A8900F78963 /* TransactionVC.swift in Sources */,
 				B84257EC22D2F8B300DDB494 /* array.swift in Sources */,
+				B8AC973E232F577F00578C6E /* CustomPhotoDialog.swift in Sources */,
 				B84257F922D31FF900DDB494 /* FMDatabasePool.m in Sources */,
 				B89CCB0F22EB1B3B00F94BDB /* MenuCell.swift in Sources */,
 				B84257FB22D31FF900DDB494 /* FMDatabase.m in Sources */,
@@ -481,7 +485,6 @@
 				B82C6F5E22D35ADA00F78963 /* InventorVC.swift in Sources */,
 				B82C6F5822D35A6100F78963 /* InverdVC.swift in Sources */,
 				8F8F0A99231A978700F88649 /* inverdHeaderCell.swift in Sources */,
-				B807897822D3659400AD9A42 /* CustomPhotoDialog.swift in Sources */,
 				B807897A22D3659400AD9A42 /* ExtensionString.swift in Sources */,
 				B807897722D3659400AD9A42 /* CustomDatePickerDialog.swift in Sources */,
 				B8EAE4C622E97C26008B4AAF /* DesignableCustomView.swift in Sources */,
@@ -494,6 +497,7 @@
 				B88F16E722D44C8A004715CF /* Util.swift in Sources */,
 				B807898522D3683100AD9A42 /* inwardCell.swift in Sources */,
 				B807897D22D365F300AD9A42 /* BaseVC.swift in Sources */,
+				B8AC9741232F73A600578C6E /* AddImgVC.swift in Sources */,
 				B807898722D3684300AD9A42 /* outwerdCell.swift in Sources */,
 				B88F16E522D44C8A004715CF /* ModelManager.swift in Sources */,
 				B807897622D3659400AD9A42 /* UIViewExtension.swift in Sources */,
@@ -653,14 +657,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4N342XE5DN;
 				INFOPLIST_FILE = Inventory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gunatitsolution.CFl.Inventory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myonsite.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MyOnSite;
 				SWIFT_OBJC_BRIDGING_HEADER = "Inventory/Inventory-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -674,14 +681,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4N342XE5DN;
 				INFOPLIST_FILE = Inventory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gunatitsolution.CFl.Inventory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.myonsite.user;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MyOnSite;
 				SWIFT_OBJC_BRIDGING_HEADER = "Inventory/Inventory-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
