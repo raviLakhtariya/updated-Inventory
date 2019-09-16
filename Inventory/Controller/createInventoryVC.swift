@@ -199,6 +199,7 @@ class createInventoryVC: UIViewController,UITextFieldDelegate {
     @IBAction func onClickBtnCancelImg(_ sender: Any) {
         imgView.image = UIImage.init(named: "asset-placeholder")
         self.cancelBtn.isHidden = true
+        self.isPicAdded = false
         dialogForImage?.removeFromSuperview()
 
     }
@@ -340,6 +341,7 @@ class createInventoryVC: UIViewController,UITextFieldDelegate {
 
         self.txtProductRate.text = ""
         self.imgView.image = UIImage.init(named: "asset-placeholder")
+        self.isPicAdded = false
         self.lblproductTotal.text = "0.0"
         
     }
