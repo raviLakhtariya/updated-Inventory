@@ -366,14 +366,14 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 if isInserted {
                     
                     
-                    Utility.showToast(message: "Record Inserted successfully.")
+                    Utility.showToast(message: "inward Inserted successfully.")
                     self.navigationController?.popViewController(animated: true)
                 } else {
-                    Utility.showToast(message: "Error in inserting record.")
+                    Utility.showToast(message: "Error in inserting inward.")
                 }
                 
             }else{
-                Utility.showToast(message: "Error in inserting record.")
+                Utility.showToast(message: "Error in inserting inward.")
             }
         }else{
             let inverdInfo: Inverd = Inverd()
@@ -393,14 +393,14 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 if isUpdate {
                     
                     
-                    Utility.showToast(message: "Record Updated successfully.")
+                    Utility.showToast(message: "Inward Updated successfully.")
                     self.navigationController?.popViewController(animated: true)
                 } else {
-                    Utility.showToast(message: "Error in inserting record.")
+                    Utility.showToast(message: "Error in inserting inward.")
                 }
                 
             }else{
-                Utility.showToast(message: "Error in inserting record.")
+                Utility.showToast(message: "Error in inserting inward.")
             }
         }
       
@@ -423,13 +423,13 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 if isInserted {
                     
                     
-                    Utility.showToast(message: "Record Inserted successfully.")
+                    Utility.showToast(message: "Record Outward successfully.")
                     self.navigationController?.popViewController(animated: true)
                 } else {
-                    Utility.showToast(message: "Error in inserting record.")
+                    Utility.showToast(message: "Error in inserting outward.")
                 }
             }else{
-                Utility.showToast(message: "Error in inserting record.")
+                Utility.showToast(message: "Error in inserting outward.")
             }
         }else{
             let inverdInfo: Inverd = Inverd()
@@ -447,13 +447,13 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 if isUpdate {
                     
                     
-                    Utility.showToast(message: "Record Updated successfully.")
+                    Utility.showToast(message: "Outward Updated successfully.")
                     self.navigationController?.popViewController(animated: true)
                 } else {
-                    Utility.showToast(message: "Error in inserting record.")
+                    Utility.showToast(message: "Error in inserting outward.")
                 }
             }else{
-                Utility.showToast(message: "Error in inserting record.")
+                Utility.showToast(message: "Error in inserting outward.")
             }
         }
        
@@ -497,11 +497,11 @@ class InOutVC: UIViewController,UITextFieldDelegate {
         }else{
             let isUpdated = ModelManager.getInstance().updateProductData(productInfo: productInfo)
             if isUpdated {
-                Utility.showToast(message: "Record Inserted successfully.")
+                Utility.showToast(message: "Product update successfully.")
                 return true
             //    self.navigationController?.popViewController(animated: true)
             } else {
-                Utility.showToast(message: "Error in inserting record.")
+                Utility.showToast(message: "Error in update product.")
                 return false
             }
         }

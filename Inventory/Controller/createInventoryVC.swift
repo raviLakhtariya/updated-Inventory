@@ -273,10 +273,10 @@ class createInventoryVC: UIViewController,UITextFieldDelegate {
             
                let isUpdated = ModelManager.getInstance().updateProductData(productInfo: productInfo)
             if isUpdated {
-                Utility.showToast(message: "Record updated successfully.")
+                Utility.showToast(message: "Product updated successfully.")
                 self.navigationController?.popViewController(animated: true)
             } else {
-                Utility.showToast(message: "Error in updated record.")
+                Utility.showToast(message: "Error in updated product record.")
             }
             
         }
@@ -300,10 +300,10 @@ class createInventoryVC: UIViewController,UITextFieldDelegate {
             
             let isInserted = ModelManager.getInstance().addProductData(productInfo: productInfo)
             if isInserted {
-                Utility.showToast(message: "Record Inserted successfully.")
+                Utility.showToast(message: "Product Inserted successfully.")
                 self.navigationController?.popViewController(animated: true)
             } else {
-                Utility.showToast(message: "Error in inserting record.")
+                Utility.showToast(message: "Error in inserting product.")
             }
             
         }

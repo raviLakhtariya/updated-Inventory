@@ -121,12 +121,12 @@ class InverdVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
                   // Utility.showToast(message: "Record Inserted successfully.")
                   //  self.navigationController?.popViewController(animated: true)
                 } else {
-                   Utility.showToast(message: "Error in inserting record.")
+                   Utility.showToast(message: "Error in inserting inward.")
                 }
                 
-                Utility.showToast(message: "Record deleted successfully.")
+                Utility.showToast(message: "inward deleted successfully.")
             } else {
-                Utility.showToast(message: "Error in deleting record.")
+                Utility.showToast(message: "Error in deleting inward.")
             }
             self.getProductData()
         }

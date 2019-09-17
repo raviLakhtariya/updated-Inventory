@@ -146,7 +146,7 @@ class InventorVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             for i in 0..<transactionInfo.count {
                    let inverdoutverDataobj : Inverd = transactionInfo[i] as! Inverd
                 if product.productID == inverdoutverDataobj.productID {
-                    Utility.showToast(message: "Error in deleting record.")
+                    Utility.showToast(message: "Error in deleting product.")
                     count = count + 1
                 }else{
                     
@@ -155,9 +155,9 @@ class InventorVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             if count == 0 {
                 let isDeleted = ModelManager.getInstance().deleteProductData(productInfo: product)
                 if isDeleted {
-                    Utility.showToast(message: "Record deleted successfully.")
+                    Utility.showToast(message: "Product deleted successfully.")
                 } else {
-                    Utility.showToast(message: "Error in deleting record.")
+                    Utility.showToast(message: "Error in deleting product.")
                 }
                 self.getProductData()
             }else{

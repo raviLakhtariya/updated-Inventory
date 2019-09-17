@@ -146,12 +146,12 @@ class outverdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                     // Utility.showToast(message: "Record Inserted successfully.")
                     //  self.navigationController?.popViewController(animated: true)
                 } else {
-                    Utility.showToast(message: "Error in inserting record.")
+                    Utility.showToast(message: "Error in inserting outward.")
                 }
                 
-                Utility.showToast(message: "Record deleted successfully.")
+                Utility.showToast(message: "outward deleted successfully.")
             } else {
-                Utility.showToast(message: "Error in deleting record.")
+                Utility.showToast(message: "Error in deleting outward.")
             }
             self.getProductData()
         }
