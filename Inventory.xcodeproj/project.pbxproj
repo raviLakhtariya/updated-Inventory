@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F8F0A99231A978700F88649 /* inverdHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F0A98231A978700F88649 /* inverdHeaderCell.swift */; };
+		8FDD692823312FC1007046B8 /* Inventory.db in Resources */ = {isa = PBXBuildFile; fileRef = 8FDD692723312FC1007046B8 /* Inventory.db */; };
 		A7948FD375BE30406059B387 /* Pods_Inventory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7012374E5CD5E5C95697DB36 /* Pods_Inventory.framework */; };
 		B807896922D3655500AD9A42 /* ACFloatingTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = B807896822D3655500AD9A42 /* ACFloatingTextfield.swift */; };
 		B807897322D3659400AD9A42 /* dialogForDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B807896A22D3658F00AD9A42 /* dialogForDatePicker.xib */; };
@@ -77,6 +78,7 @@
 		7012374E5CD5E5C95697DB36 /* Pods_Inventory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inventory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C36CB5A28E8A5B979676381 /* Pods-Inventory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inventory.release.xcconfig"; path = "Target Support Files/Pods-Inventory/Pods-Inventory.release.xcconfig"; sourceTree = "<group>"; };
 		8F8F0A98231A978700F88649 /* inverdHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inverdHeaderCell.swift; sourceTree = "<group>"; };
+		8FDD692723312FC1007046B8 /* Inventory.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inventory.db; sourceTree = "<group>"; };
 		9C65037DE00E294A69E34E40 /* Pods-Inventory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inventory.debug.xcconfig"; path = "Target Support Files/Pods-Inventory/Pods-Inventory.debug.xcconfig"; sourceTree = "<group>"; };
 		B807896822D3655500AD9A42 /* ACFloatingTextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACFloatingTextfield.swift; sourceTree = "<group>"; };
 		B807896A22D3658F00AD9A42 /* dialogForDatePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dialogForDatePicker.xib; sourceTree = "<group>"; };
@@ -137,7 +139,6 @@
 		B88F16F222D4583F004715CF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		B89CCB0E22EB1B3B00F94BDB /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		B89CCB1022EB20EF00F94BDB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = Inventory/Reachability.swift; sourceTree = SOURCE_ROOT; };
-		B8A63A3822E9D7C0007EC266 /* Inventory.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inventory.db; sourceTree = "<group>"; };
 		B8A63A3922E9D90D007EC266 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		B8A63A3B22E9D968007EC266 /* searchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchCell.swift; sourceTree = "<group>"; };
 		B8AC973C232F577E00578C6E /* CustomPhotoDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoDialog.swift; sourceTree = "<group>"; };
@@ -196,7 +197,6 @@
 		B84257D622D2F2B000DDB494 /* Inventory */ = {
 			isa = PBXGroup;
 			children = (
-				B8A63A3822E9D7C0007EC266 /* Inventory.db */,
 				B88F170322D4929E004715CF /* custom compnent dialog */,
 				B88F170222D49258004715CF /* extension */,
 				B88F16FE22D49161004715CF /* cell */,
@@ -309,6 +309,7 @@
 		B88F170322D4929E004715CF /* custom compnent dialog */ = {
 			isa = PBXGroup;
 			children = (
+				8FDD692723312FC1007046B8 /* Inventory.db */,
 				B807896822D3655500AD9A42 /* ACFloatingTextfield.swift */,
 				B807897022D3659200AD9A42 /* CustomAlertDialog.swift */,
 				B807896E22D3659100AD9A42 /* CustomDatePickerDialog.swift */,
@@ -407,6 +408,7 @@
 				B8C8942622EACDAA00BF0DD4 /* dialogForTotal.xib in Resources */,
 				B851243122EEB254006B78FD /* CustomDriverDetailCell.xib in Resources */,
 				B807897422D3659400AD9A42 /* dialogForAlert.xib in Resources */,
+				8FDD692823312FC1007046B8 /* Inventory.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
