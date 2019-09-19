@@ -256,7 +256,7 @@ class createInventoryVC: UIViewController,UITextFieldDelegate {
         if isEdit == true {
         
             let productInfo: ProductInfo = ProductInfo()
-       //     productInfo.productID = productData.productID
+           productInfo.productID = productData.productID
             productInfo.productName = txtProductName.text!
             productInfo.productDescription = txtProductDesc.text!
             productInfo.productQuantity = Int(txtProductQuantity.text!)!

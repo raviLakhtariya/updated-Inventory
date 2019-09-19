@@ -136,10 +136,10 @@ class outverdVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 arrproductInfo = ModelManager.getInstance().getSpecificProductData(ID:outproduct.productID)
                 let productObj : ProductInfo = arrproductInfo.firstObject as! ProductInfo
                 
-                productObj.productQuantity = Int(productObj.productQuantity + outproduct.inproductQuantity)
+              //  productObj.productQuantity = Int(productObj.productQuantity + outproduct.inproductQuantity)
                 
-                productObj.productTotal = Double(productObj.productTotal + outproduct.inproductTotal)
-                productObj.productCurrentRate = inverdRateCalucationDeletion(inverdProductTotal:productObj.productTotal , inverdProductQuantity: productObj.productQuantity)
+               // productObj.productTotal = Double(productObj.productTotal + outproduct.inproductTotal)
+             //   productObj.productCurrentRate = inverdRateCalucationDeletion(inverdProductTotal:productObj.productTotal , inverdProductQuantity: productObj.productQuantity)
                 
                 let isUpdated = ModelManager.getInstance().updateProductData(productInfo: productObj)
                 if isUpdated {

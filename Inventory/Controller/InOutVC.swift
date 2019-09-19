@@ -360,7 +360,7 @@ class InOutVC: UIViewController,UITextFieldDelegate {
             
             let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:true)
             
-            if isUpdated == true{
+            //if isUpdated == true{
                 
                 let isInserted = ModelManager.getInstance().addInwardData(inwardInfo: inverdInfo)
                 if isInserted {
@@ -372,13 +372,14 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                     Utility.showToast(message: "Error in inserting inward.")
                 }
                 
-            }else{
-                Utility.showToast(message: "Error in inserting inward.")
-            }
+           // }else{
+         //       Utility.showToast(message: "Error in inserting inward.")
+         //   }
         }else{
             let inverdInfo: Inverd = Inverd()
             
             inverdInfo.isinverd = true
+            inverdInfo.inID = inverdData.inID
             inverdInfo.productID = productIds
             inverdInfo.inproductCurrentRate = Double(txtProductRate.text!)!
             inverdInfo.inproductQuantity = Int(txtProductQuantity.text!)!
@@ -387,7 +388,7 @@ class InOutVC: UIViewController,UITextFieldDelegate {
             
             let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:true)
             
-            if isUpdated == true{
+           // if isUpdated == true{
                 
                 let isUpdate = ModelManager.getInstance().updateInwardData(inwardInfo: inverdInfo)
                 if isUpdate {
@@ -399,9 +400,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                     Utility.showToast(message: "Error in inserting inward.")
                 }
                 
-            }else{
-                Utility.showToast(message: "Error in inserting inward.")
-            }
+        //    }else{
+         //       Utility.showToast(message: "Error in inserting inward.")
+        //    }
         }
       
     }
@@ -416,9 +417,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
             inverdInfo.inproductTotal = Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!)
             inverdInfo.inproductDate = dateLbl.text!
             
-            let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:false)
+          //  let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:false)
             
-            if isUpdated == true {
+        //    if isUpdated == true {
                 let isInserted = ModelManager.getInstance().addInwardData(inwardInfo: inverdInfo)
                 if isInserted {
                     
@@ -428,12 +429,13 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 } else {
                     Utility.showToast(message: "Error in inserting outward.")
                 }
-            }else{
-                Utility.showToast(message: "Error in inserting outward.")
-            }
+          //  }else{
+          //      Utility.showToast(message: "Error in inserting outward.")
+         //   }
         }else{
             let inverdInfo: Inverd = Inverd()
             inverdInfo.isinverd = false
+            inverdInfo.inID = inverdData.inID
             inverdInfo.productID = productIds
             inverdInfo.inproductCurrentRate = Double(txtProductRate.text!)!
             inverdInfo.inproductQuantity = Int(txtProductQuantity.text!)!
@@ -442,7 +444,7 @@ class InOutVC: UIViewController,UITextFieldDelegate {
             
             let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:false)
             
-            if isUpdated == true {
+        //    if isUpdated == true {
                 let isUpdate = ModelManager.getInstance().updateInwardData(inwardInfo: inverdInfo)
                 if isUpdate {
                     
@@ -452,9 +454,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 } else {
                     Utility.showToast(message: "Error in inserting outward.")
                 }
-            }else{
-                Utility.showToast(message: "Error in inserting outward.")
-            }
+        //    }else{
+        //        Utility.showToast(message: "Error in inserting outward.")
+        //    }
         }
        
         
@@ -477,11 +479,20 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 let productStrImage = Utility.convertImageToBase64(image: imgView.image!)
                 productInfo.productImage = productStrImage
             }
-        
-        if isInverd == true {
-            productInfo.productQuantity = ((Int(self.lblProductQuantityValue.text!)!) + inQuantity)
-      
-            productInfo.productTotal = ((Double(self.lblProductTotalValue.text!)!) + inTotal)
+        productInfo.productQuantity = Int(self.lblProductQuantityValue.text!)!
+        productInfo.productTotal = Double(self.lblProductTotalValue.text!)!
+   /*     if isInverd == true {
+            if isEdit == true {
+                productInfo.productQuantity = ((Int(self.lblProductQuantityValue.text!)!) + inQuantity)
+                
+                productInfo.productTotal = ((Double(self.lblProductTotalValue.text!)!) + inTotal)
+            }else{
+                productInfo.productQuantity = ((Int(self.lblProductQuantityValue.text!)!) + inQuantity)
+                
+                productInfo.productTotal = ((Double(self.lblProductTotalValue.text!)!) + inTotal)
+            }
+         
+            
              //  productInfo.productCurrentRate = inverdRateCalucation(inverdProductTotal: ((Double(self.lblProductTotalValue.text!)!) + inTotal), inverdProductQuantity: ((Int(self.lblProductQuantityValue.text!)!) + inQuantity))
         }else{
             
@@ -489,9 +500,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
            
            // productInfo.productCurrentRate = ((Double(self.lblProductRateValue.text!)!) - inRate)
             productInfo.productTotal = ((Double(self.lblProductTotalValue.text!)!) - inTotal)
-        }
+        }*/
         
-        if productInfo.productQuantity < 0 {
+        if ((Int(self.lblProductQuantityValue.text!)!) - inQuantity) < 0 {
              Utility.showToast(message: "You have not sufficient Stock")
             return false
         }else{
