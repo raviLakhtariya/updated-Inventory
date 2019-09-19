@@ -177,7 +177,7 @@ class TransactionVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
                 self.selectedProductID = product.productID
                 self.arrTransactionInfo = NSMutableArray.init()
                 
-                self.selectDateBtn.titleLabel?.text = "Select Date"
+               // self.selectDateBtn.titleLabel?.text = "Select Date"
                 
                 
                 
@@ -222,8 +222,8 @@ class TransactionVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
 
     @IBAction func onClickFilterBtn(_ sender: Any) {
         self.filterView.isHidden = false
-        self.selectDateBtn.titleLabel?.text! = "Select Date"
-        self.selectProductBtn.titleLabel?.text! = "Select Product"
+        self.selectDateBtn.titleLabel?.text! = " -- "
+        self.selectProductBtn.titleLabel?.text! = " -- "
     }
     
     @IBAction func onClickFilterBackBtn(_ sender: Any) {
@@ -251,7 +251,7 @@ class TransactionVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             { [unowned self, unowned datePickerDialog] (selectedDate:Date) in
                 self.strDateOfEarning = Utility.dateToString(date: selectedDate, withFormat: DateFormat.DATE_MM_DD_YYYY)
                 self.selectDateBtn.setTitle(Utility.convertDateFormate(date: selectedDate), for: .normal)
-            //    self.selectDateLbl.text = Utility.convertDateFormate(date: selectedDate)
+           //     self.selectDateLbl.text = Utility.convertDateFormate(date: selectedDate)
                 self.arrTransactionInfo = ModelManager.getInstance().getSpecificInverdDataWithDate(ID: self.selectedProductID, date: (self.selectDateBtn.titleLabel?.text)!)
                 self.tableview.reloadData()
               //  getSpecificInverdDataWithDate
