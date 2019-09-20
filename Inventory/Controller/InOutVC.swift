@@ -53,6 +53,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
     var arrProductInfos : NSMutableArray!
     var isNull : Bool!
     
+    var strTempTotal : Double!
+    var strTempQuantity : Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initialSetup()
@@ -151,6 +154,11 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 let products = arrProductInfos.object(at: 0) as! ProductInfo
                 productDesc = products.productDescription
                 productDate = products.productDate
+                
+                strTempQuantity = inverdData.inproductQuantity
+                strTempTotal = inverdData.inproductTotal
+                
+                
                 lblProductRateValue.text = String(products.productCurrentRate)
                 lblProductQuantityValue.text = String(products.productQuantity)
                 lblProductTotalValue.text = String(inverdData.inproductTotal)
@@ -193,6 +201,10 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 let products = arrProductInfos.object(at: 0) as! ProductInfo
                 productDesc = products.productDescription
                 productDate = products.productDate
+                
+                strTempQuantity = inverdData.inproductQuantity
+                strTempTotal = inverdData.inproductTotal
+                
                 lblProductRateValue.text = String(products.productCurrentRate)
                 lblProductQuantityValue.text = String(products.productQuantity)
                 lblProductTotalValue.text = String(products.productTotal)
@@ -360,7 +372,7 @@ class InOutVC: UIViewController,UITextFieldDelegate {
             
             let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:true)
             
-            //if isUpdated == true{
+            if isUpdated == true{
                 
                 let isInserted = ModelManager.getInstance().addInwardData(inwardInfo: inverdInfo)
                 if isInserted {
@@ -372,9 +384,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                     Utility.showToast(message: "Error in inserting inward.")
                 }
                 
-           // }else{
-         //       Utility.showToast(message: "Error in inserting inward.")
-         //   }
+            }else{
+               Utility.showToast(message: "Error in inserting inward.")
+            }
         }else{
             let inverdInfo: Inverd = Inverd()
             
@@ -388,7 +400,7 @@ class InOutVC: UIViewController,UITextFieldDelegate {
             
             let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:true)
             
-           // if isUpdated == true{
+            if isUpdated == true{
                 
                 let isUpdate = ModelManager.getInstance().updateInwardData(inwardInfo: inverdInfo)
                 if isUpdate {
@@ -400,9 +412,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                     Utility.showToast(message: "Error in inserting inward.")
                 }
                 
-        //    }else{
-         //       Utility.showToast(message: "Error in inserting inward.")
-        //    }
+        }else{
+                Utility.showToast(message: "Error in inserting inward.")
+           }
         }
       
     }
@@ -417,9 +429,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
             inverdInfo.inproductTotal = Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!)
             inverdInfo.inproductDate = dateLbl.text!
             
-          //  let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:false)
+            let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:false)
             
-        //    if isUpdated == true {
+        if isUpdated == true {
                 let isInserted = ModelManager.getInstance().addInwardData(inwardInfo: inverdInfo)
                 if isInserted {
                     
@@ -429,9 +441,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 } else {
                     Utility.showToast(message: "Error in inserting outward.")
                 }
-          //  }else{
-          //      Utility.showToast(message: "Error in inserting outward.")
-         //   }
+          }else{
+                Utility.showToast(message: "Error in inserting outward.")
+            }
         }else{
             let inverdInfo: Inverd = Inverd()
             inverdInfo.isinverd = false
@@ -444,7 +456,7 @@ class InOutVC: UIViewController,UITextFieldDelegate {
             
             let isUpdated = saveProductData(productID: productIds, inQuantity: Int(txtProductQuantity.text!)!, inRate: Double(lblProductRateValue.text!)!, inTotal: Utility.calculateQntyCurrency(qnty: Double(txtProductQuantity.text!)!, rate: Double(txtProductRate.text!)!),isInverd:false)
             
-        //    if isUpdated == true {
+        if isUpdated == true {
                 let isUpdate = ModelManager.getInstance().updateInwardData(inwardInfo: inverdInfo)
                 if isUpdate {
                     
@@ -454,9 +466,9 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 } else {
                     Utility.showToast(message: "Error in inserting outward.")
                 }
-        //    }else{
-        //        Utility.showToast(message: "Error in inserting outward.")
-        //    }
+        }else{
+                Utility.showToast(message: "Error in inserting outward.")
+            }
         }
        
         
@@ -479,46 +491,81 @@ class InOutVC: UIViewController,UITextFieldDelegate {
                 let productStrImage = Utility.convertImageToBase64(image: imgView.image!)
                 productInfo.productImage = productStrImage
             }
-        productInfo.productQuantity = Int(self.lblProductQuantityValue.text!)!
-        productInfo.productTotal = Double(self.lblProductTotalValue.text!)!
-   /*     if isInverd == true {
+//        productInfo.productQuantity = Int(self.lblProductQuantityValue.text!)!
+  //      productInfo.productTotal = Double(self.lblProductTotalValue.text!)!
+        if isInverd == true {
             if isEdit == true {
-                productInfo.productQuantity = ((Int(self.lblProductQuantityValue.text!)!) + inQuantity)
+                productInfo.productQuantity = calculateFinalQuantityInverd(tempProductQuantity: strTempQuantity, productQuantity:Int(self.lblProductQuantityValue.text!)!, UpdatedProductQuantity: inQuantity)
                 
-                productInfo.productTotal = ((Double(self.lblProductTotalValue.text!)!) + inTotal)
+                productInfo.productTotal = calculateFinalTotalInverd(tempProductTotal: strTempTotal, productTotal: Double(self.lblProductTotalValue.text!)!, UpdatedProductTotal: inTotal)
             }else{
                 productInfo.productQuantity = ((Int(self.lblProductQuantityValue.text!)!) + inQuantity)
                 
                 productInfo.productTotal = ((Double(self.lblProductTotalValue.text!)!) + inTotal)
             }
-         
+//            if ((Int(self.lblProductQuantityValue.text!)!) - inQuantity) < 0 {
+//                Utility.showToast(message: "You have not sufficient Stock")
+//                return false
+//            }else{
+                let isUpdated = ModelManager.getInstance().updateProductData(productInfo: productInfo)
+                if isUpdated {
+                    Utility.showToast(message: "Product update successfully.")
+                    return true
+                    //    self.navigationController?.popViewController(animated: true)
+                } else {
+                    Utility.showToast(message: "Error in update product.")
+                    return false
+                }
+//        }
             
              //  productInfo.productCurrentRate = inverdRateCalucation(inverdProductTotal: ((Double(self.lblProductTotalValue.text!)!) + inTotal), inverdProductQuantity: ((Int(self.lblProductQuantityValue.text!)!) + inQuantity))
         }else{
-            
-            productInfo.productQuantity = ((Int(self.lblProductQuantityValue.text!)!) - inQuantity)
-           
-           // productInfo.productCurrentRate = ((Double(self.lblProductRateValue.text!)!) - inRate)
-            productInfo.productTotal = ((Double(self.lblProductTotalValue.text!)!) - inTotal)
-        }*/
-        
-        if ((Int(self.lblProductQuantityValue.text!)!) - inQuantity) < 0 {
-             Utility.showToast(message: "You have not sufficient Stock")
-            return false
-        }else{
-            let isUpdated = ModelManager.getInstance().updateProductData(productInfo: productInfo)
-            if isUpdated {
-                Utility.showToast(message: "Product update successfully.")
-                return true
-            //    self.navigationController?.popViewController(animated: true)
-            } else {
-                Utility.showToast(message: "Error in update product.")
+            if isEdit == true {
+                productInfo.productQuantity = calculateFinalQUantityOutverd(tempProductQuantity: strTempQuantity, productQuantity: Int(self.lblProductQuantityValue.text!)!, UpdatedProductQuantity: inQuantity)
+                
+                productInfo.productTotal = calculateFinalTotalOutverd(tempProductTotal: strTempTotal, productTotal: Double(self.lblProductTotalValue.text!)!, UpdatedProductTotal: inTotal)
+            }else{
+                productInfo.productQuantity = ((Int(self.lblProductQuantityValue.text!)!) - inQuantity)
+                
+                productInfo.productTotal = ((Double(self.lblProductTotalValue.text!)!) - inTotal)
+                }
+            if ((Int(self.lblProductQuantityValue.text!)!) - inQuantity) < 0 {
+                Utility.showToast(message: "You have not sufficient Stock")
                 return false
+            }else{
+                let isUpdated = ModelManager.getInstance().updateProductData(productInfo: productInfo)
+                if isUpdated {
+                    Utility.showToast(message: "Product update successfully.")
+                    return true
+                    //    self.navigationController?.popViewController(animated: true)
+                } else {
+                    Utility.showToast(message: "Error in update product.")
+                    return false
+                }
             }
         }
         
+       
+        
+    }
+    func calculateFinalQuantityInverd(tempProductQuantity:Int,productQuantity:Int,UpdatedProductQuantity:Int)->Int{
+        return ((UpdatedProductQuantity - tempProductQuantity) + productQuantity)
     }
     
+    func calculateFinalTotalInverd(tempProductTotal:Double,productTotal:Double,UpdatedProductTotal:Double)->Double{
+        return ((UpdatedProductTotal - tempProductTotal) + productTotal)
+    }
+    
+    
+    
+    func calculateFinalQUantityOutverd(tempProductQuantity:Int,productQuantity:Int,UpdatedProductQuantity:Int)->Int{
+        return ((tempProductQuantity - UpdatedProductQuantity) + productQuantity)
+    }
+    
+    func calculateFinalTotalOutverd(tempProductTotal:Double,productTotal:Double,UpdatedProductTotal:Double)->Double{
+        return ((tempProductTotal - UpdatedProductTotal) + productTotal)
+    }
+
     func inverdRateCalucation(inverdProductTotal:Double,inverdProductQuantity:Int)->Double{
         return (inverdProductTotal / Double(inverdProductQuantity))
     }
