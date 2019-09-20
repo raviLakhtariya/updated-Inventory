@@ -38,7 +38,6 @@
 		B84257DF22D2F2B200DDB494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84257DE22D2F2B200DDB494 /* Assets.xcassets */; };
 		B84257E222D2F2B200DDB494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84257E022D2F2B200DDB494 /* LaunchScreen.storyboard */; };
 		B84257EA22D2F7F000DDB494 /* inventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84257E922D2F7F000DDB494 /* inventoryCell.swift */; };
-		B84257EC22D2F8B300DDB494 /* array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84257EB22D2F8B300DDB494 /* array.swift */; };
 		B84257F922D31FF900DDB494 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B84257EE22D31FE900DDB494 /* FMDatabasePool.m */; };
 		B84257FA22D31FF900DDB494 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B84257F022D31FEC00DDB494 /* FMDatabaseQueue.m */; };
 		B84257FB22D31FF900DDB494 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B84257F322D31FF100DDB494 /* FMDatabase.m */; };
@@ -66,6 +65,7 @@
 		B8AC973F232F577F00578C6E /* dialogForChoosePicture.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8AC973D232F577F00578C6E /* dialogForChoosePicture.xib */; };
 		B8AC9741232F73A600578C6E /* AddImgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AC9740232F73A600578C6E /* AddImgVC.swift */; };
 		B8B485F722D59E1500088D9C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B485F622D59E1500088D9C /* DateExtension.swift */; };
+		B8B9ECFC2334A649003F636C /* CounterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9ECFB2334A649003F636C /* CounterVC.swift */; };
 		B8C8942222EAC38E00BF0DD4 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8942122EAC38E00BF0DD4 /* MenuVC.swift */; };
 		B8C8942422EACD9400BF0DD4 /* CustomTotalDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C8942322EACD9400BF0DD4 /* CustomTotalDialog.swift */; };
 		B8C8942622EACDAA00BF0DD4 /* dialogForTotal.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C8942522EACDAA00BF0DD4 /* dialogForTotal.xib */; };
@@ -110,7 +110,6 @@
 		B84257E122D2F2B200DDB494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B84257E322D2F2B200DDB494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B84257E922D2F7F000DDB494 /* inventoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inventoryCell.swift; sourceTree = "<group>"; };
-		B84257EB22D2F8B300DDB494 /* array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = array.swift; sourceTree = "<group>"; };
 		B84257ED22D31FE200DDB494 /* Inventory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inventory-Bridging-Header.h"; sourceTree = "<group>"; };
 		B84257EE22D31FE900DDB494 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		B84257EF22D31FEA00DDB494 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
@@ -145,6 +144,7 @@
 		B8AC973D232F577F00578C6E /* dialogForChoosePicture.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = dialogForChoosePicture.xib; sourceTree = "<group>"; };
 		B8AC9740232F73A600578C6E /* AddImgVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImgVC.swift; sourceTree = "<group>"; };
 		B8B485F622D59E1500088D9C /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		B8B9ECFB2334A649003F636C /* CounterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterVC.swift; sourceTree = "<group>"; };
 		B8C8942122EAC38E00BF0DD4 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		B8C8942322EACD9400BF0DD4 /* CustomTotalDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTotalDialog.swift; sourceTree = "<group>"; };
 		B8C8942522EACDAA00BF0DD4 /* dialogForTotal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = dialogForTotal.xib; sourceTree = "<group>"; };
@@ -212,7 +212,6 @@
 				B84257D722D2F2B000DDB494 /* AppDelegate.swift */,
 				B88F16E222D44C88004715CF /* ModelManager.swift */,
 				B84257FE22D3216500DDB494 /* DBManager.swift */,
-				B84257EB22D2F8B300DDB494 /* array.swift */,
 				B84257ED22D31FE200DDB494 /* Inventory-Bridging-Header.h */,
 				B8C8942122EAC38E00BF0DD4 /* MenuVC.swift */,
 				B84257DB22D2F2B000DDB494 /* Main.storyboard */,
@@ -226,6 +225,7 @@
 			children = (
 				B807897C22D365F200AD9A42 /* BaseVC.swift */,
 				B84257D922D2F2B000DDB494 /* ViewController.swift */,
+				B8B9ECFB2334A649003F636C /* CounterVC.swift */,
 				B82C6F5522D35A2E00F78963 /* createInventoryVC.swift */,
 				B82C6F5722D35A6100F78963 /* InverdVC.swift */,
 				B82C6F5922D35A7300F78963 /* outverdVC.swift */,
@@ -471,7 +471,6 @@
 				B8B485F722D59E1500088D9C /* DateExtension.swift in Sources */,
 				B807898322D3677500AD9A42 /* PreferenceHelper.swift in Sources */,
 				B82C6F5C22D35A8900F78963 /* TransactionVC.swift in Sources */,
-				B84257EC22D2F8B300DDB494 /* array.swift in Sources */,
 				B8AC973E232F577F00578C6E /* CustomPhotoDialog.swift in Sources */,
 				B84257F922D31FF900DDB494 /* FMDatabasePool.m in Sources */,
 				B89CCB0F22EB1B3B00F94BDB /* MenuCell.swift in Sources */,
@@ -482,6 +481,7 @@
 				B807896922D3655500AD9A42 /* ACFloatingTextfield.swift in Sources */,
 				B88F16E922D44CBE004715CF /* ProductInfo.swift in Sources */,
 				B8A63A3A22E9D90D007EC266 /* SearchVC.swift in Sources */,
+				B8B9ECFC2334A649003F636C /* CounterVC.swift in Sources */,
 				B8C8942222EAC38E00BF0DD4 /* MenuVC.swift in Sources */,
 				B851243222EEB254006B78FD /* CustomFavouriteDriverDialog.swift in Sources */,
 				B82C6F5E22D35ADA00F78963 /* InventorVC.swift in Sources */,
