@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MobileCoreServices
 class AddImgVC: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     @IBOutlet weak var btnSkip: UIButton!
@@ -58,7 +58,7 @@ class AddImgVC: UIViewController,UINavigationControllerDelegate,UIImagePickerCon
         picker.allowsEditing = true
         picker.sourceType = .savedPhotosAlbum
         picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-        
+//picker.mediaTypes = kUTTypeImage as! [String]
         parent?.present(picker, animated: true, completion: nil)
     }
     
@@ -71,8 +71,10 @@ class AddImgVC: UIViewController,UINavigationControllerDelegate,UIImagePickerCon
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)
             
         {
+            
             picker.sourceType =   .camera
-            picker.mediaTypes =   UIImagePickerController.availableMediaTypes(for: .camera)!
+      //      picker.mediaTypes =   UIImagePickerController.availableMediaTypes(for: .camera)!
+            picker.mediaTypes = kUTTypeImage as! [String]//imag.mediaTypes = [kUTTypeImage as String]
             picker.cameraFlashMode = .on
             
             parent?.present(picker, animated: true, completion: nil)
